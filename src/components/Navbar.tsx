@@ -16,22 +16,6 @@ const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/About" },
   { label: "Products", href: "/products" },
-  /*{
-    label: "Products",
-    href: "/products",
-    children: [
-      {
-        label: "Submersible Pump Starters",
-        href: "/products/starters",
-        desc: "Control panels built for reliable pump operation.",
-      },
-      {
-        label: "Submersible Pump Cables",
-        href: "/products/cables",
-        desc: "Durable cabling for submersible installations.",
-      },
-    ],
-  },*/
   { label: "Dealer", href: "/dealer" },
   { label: "Contact", href: "/contact" },
 ];
