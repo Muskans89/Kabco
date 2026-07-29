@@ -58,17 +58,10 @@ export default function AboutPreview() {
           <div className="kb-about-rule" />
 
           <p>
-            KABCO is an Indian electrical brand focused on delivering
-            premium-quality submersible starters and cables that combine
-            dependable performance with thoughtful design.
-          </p>
-
-          <p>
-            We believe every product should offer lasting value through
-            careful material selection, consistent manufacturing standards,
-            and attention to detail. From product quality to packaging,
-            every aspect is designed to reflect our commitment to
-            reliability and professionalism.
+            KABCO is an Indian electrical brand focused on submersible
+            starters and cables. We are committed to delivering quality
+            products through careful material selection, consistent
+            manufacturing standards, and attention to detail.
           </p>
 
           <p>
@@ -157,7 +150,7 @@ export default function AboutPreview() {
         .kb-about-title {
           font-family: 'Cinzel', serif;
           font-weight: 600;
-          font-size: 40px;
+          font-size: clamp(26px, 4vw, 40px);
           line-height: 1.28;
           color: var(--kb-black);
           margin: 0 0 26px;
@@ -182,6 +175,7 @@ export default function AboutPreview() {
         .kb-btn {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 10px;
           padding: 15px 30px;
           font-size: 12.5px;
@@ -212,6 +206,7 @@ export default function AboutPreview() {
         /* ---- visual side ---- */
         .kb-about-visual {
           position: relative;
+          width: 100%;
           opacity: 0;
           transform: translateY(28px);
           transition: opacity .8s ease .15s, transform .8s ease .15s;
@@ -228,8 +223,8 @@ export default function AboutPreview() {
 
         .kb-corner {
           position: absolute;
-          width: 34px;
-          height: 34px;
+          width: 30px;
+          height: 30px;
           border: 1.5px solid var(--kb-gold);
         }
         .kb-corner-tl { top: 0; left: 0; border-right: none; border-bottom: none; }
@@ -237,21 +232,22 @@ export default function AboutPreview() {
 
         .kb-about-badge {
           position: absolute;
-          left: -20px;
-          bottom: -20px;
+          left: -16px;
+          bottom: -16px;
           background: var(--kb-white);
           border: 1px solid var(--kb-border);
           border-radius: 3px;
-          padding: 16px 22px;
+          padding: 14px 18px;
           display: flex;
           align-items: center;
-          gap: 14px;
+          gap: 12px;
           box-shadow: 0 18px 40px rgba(17,17,17,.12);
+          max-width: calc(100% - 20px);
         }
 
         .kb-about-badge-ring {
-          width: 38px;
-          height: 38px;
+          width: 36px;
+          height: 36px;
           border-radius: 50%;
           border: 1.5px solid var(--kb-gold);
           color: var(--kb-gold);
@@ -263,32 +259,66 @@ export default function AboutPreview() {
 
         .kb-about-badge strong {
           display: block;
-          font-size: 13.5px;
+          font-size: 13px;
           color: var(--kb-black);
           font-weight: 600;
         }
         .kb-about-badge span {
-          font-size: 11.5px;
+          font-size: 11px;
           color: #888;
         }
 
-        @media (max-width: 1024px) {
+        /* ---- large tablet / small desktop ---- */
+        @media (max-width: 1100px) {
           .kb-about-inner {
-            grid-template-columns: 1fr;
-            padding: 90px 32px;
-            gap: 60px;
+            gap: 56px;
+            padding: 100px 32px;
           }
-          .kb-about-visual { max-width: 460px; margin: 0 auto; }
-          .kb-about-content p { max-width: 100%; }
         }
 
-        @media (max-width: 560px) {
-          .kb-about-inner { padding: 70px 22px; }
-          .kb-about-title { font-size: 30px; }
+        /* ---- tablet: stack columns ---- */
+        @media (max-width: 900px) {
+          .kb-about-inner {
+            grid-template-columns: 1fr;
+            padding: 80px 32px;
+            gap: 52px;
+          }
+          .kb-about-content { text-align: center; }
+          .kb-about-eyebrow, .kb-about-rule { margin-left: auto; margin-right: auto; }
+          .kb-about-content p { max-width: 560px; margin-left: auto; margin-right: auto; }
+          .kb-about-visual { max-width: 420px; margin: 0 auto; }
           .kb-about-badge {
             position: static;
-            margin-top: 20px;
+            margin: 22px auto 0;
             width: fit-content;
+            max-width: 100%;
+          }
+        }
+
+        /* ---- mobile ---- */
+        @media (max-width: 560px) {
+          .kb-about-inner { padding: 60px 20px; gap: 40px; }
+          .kb-about-title { margin-bottom: 20px; }
+          .kb-about-rule { margin-bottom: 22px; }
+          .kb-about-content p { font-size: 14.5px; line-height: 1.75; margin-bottom: 16px; }
+          .kb-about-frame { padding: 16px; }
+          .kb-corner { width: 22px; height: 22px; }
+          .kb-btn { width: 100%; margin-top: 10px; }
+          .kb-about-badge {
+            width: 100%;
+            padding: 14px 16px;
+          }
+        }
+
+        /* ---- very small phones ---- */
+        @media (max-width: 360px) {
+          .kb-about-inner { padding: 48px 16px; }
+          .kb-about-visual { max-width: 100%; }
+          .kb-about-badge {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+            text-align: left;
           }
         }
 
@@ -311,7 +341,7 @@ export default function AboutPreview() {
  */
 function PackagingArt() {
   return (
-    <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "auto" }}>
+    <svg viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", height: "auto", display: "block" }}>
       <rect x="0" y="0" width="480" height="480" fill="#151515" />
 
       {/* box - front face */}
