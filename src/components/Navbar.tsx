@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * KABCO Navbar — two-tier industrial nav
  * Place in: src/components/layout/Navbar/Navbar.tsx
  *
- * Signature detail: each nav item carries a small "indicator light" —
- * a nod to the LEDs on KABCO's own starter panels — that glows gold
- * when a section is active, echoing the product world this site sells into.
+ * Products dropdown removed — "Products" is now a flat link like the
+ * rest of the nav items.
  *
  * Fonts (load once globally, e.g. in index.html):
  * <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +13,7 @@ import { useEffect, useRef, useState } from "react";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/About" },
+  { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
   { label: "Dealer", href: "/dealer" },
   { label: "Contact", href: "/contact" },
@@ -23,26 +22,15 @@ const NAV_LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
-  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [activePath, setActivePath] = useState(
     typeof window !== "undefined" ? window.location.pathname : "/"
   );
-  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const openProducts = () => {
-    if (closeTimer.current) clearTimeout(closeTimer.current);
-    setProductsOpen(true);
-  };
-  const scheduleCloseProducts = () => {
-    closeTimer.current = setTimeout(() => setProductsOpen(false), 150);
-  };
 
   const isActive = (href: string) => activePath === href;
 
@@ -85,56 +73,14 @@ export default function Navbar() {
         <nav className="kb-nav-desktop">
           <ul className="kb-nav-links">
             {NAV_LINKS.map((link) => (
-              <li
-                key={link.href}
-                className={link.children ? "kb-has-children" : ""}
-                onMouseEnter={link.children ? openProducts : undefined}
-                onMouseLeave={link.children ? scheduleCloseProducts : undefined}
-              >
+              <li key={link.href}>
                 <a
                   href={link.href}
                   className={isActive(link.href) ? "kb-active" : ""}
                   onClick={() => setActivePath(link.href)}
-                  aria-haspopup={link.children ? "true" : undefined}
-                  aria-expanded={link.children ? productsOpen : undefined}
                 >
                   {link.label}
-                  {link.children && (
-                    <svg
-                      className={`kb-chevron${productsOpen ? " kb-chevron--open" : ""}`}
-                      viewBox="0 0 24 24"
-                      width="11"
-                      height="11"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  )}
                 </a>
-
-                {link.children && (
-                  <div
-                    className={`kb-dropdown${productsOpen ? " kb-dropdown--open" : ""}`}
-                    onMouseEnter={openProducts}
-                    onMouseLeave={scheduleCloseProducts}
-                  >
-                    <div className="kb-dropdown-inner">
-                      {link.children.map((child) => (
-                        <a href={child.href} className="kb-dropdown-item" key={child.href}>
-                          <span className="kb-dropdown-item-top">
-                            <span className="kb-dropdown-item-title">{child.label}</span>
-                            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2">
-                              <path d="M5 12h14M13 6l6 6-6 6" />
-                            </svg>
-                          </span>
-                          <span className="kb-dropdown-item-desc">{child.desc}</span>
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </li>
             ))}
           </ul>
@@ -163,52 +109,16 @@ export default function Navbar() {
         <ul>
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              {link.children ? (
-                <>
-                  <button
-                    className="kb-mobile-parent"
-                    onClick={() => setMobileProductsOpen((v) => !v)}
-                  >
-                    {link.label}
-                    <svg
-                      className={`kb-chevron${mobileProductsOpen ? " kb-chevron--open" : ""}`}
-                      viewBox="0 0 24 24"
-                      width="12"
-                      height="12"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-                  <div className={`kb-mobile-submenu${mobileProductsOpen ? " kb-mobile-submenu--open" : ""}`}>
-                    {link.children.map((child) => (
-                      <a
-                        href={child.href}
-                        key={child.href}
-                        onClick={() => {
-                          setActivePath(child.href);
-                          setMenuOpen(false);
-                        }}
-                      >
-                        {child.label}
-                      </a>
-                    ))}
-                  </div>
-                </>
-              ) : (
-                <a
-                  href={link.href}
-                  className={isActive(link.href) ? "kb-active" : ""}
-                  onClick={() => {
-                    setActivePath(link.href);
-                    setMenuOpen(false);
-                  }}
-                >
-                  {link.label}
-                </a>
-              )}
+              <a
+                href={link.href}
+                className={isActive(link.href) ? "kb-active" : ""}
+                onClick={() => {
+                  setActivePath(link.href);
+                  setMenuOpen(false);
+                }}
+              >
+                {link.label}
+              </a>
             </li>
           ))}
         </ul>
@@ -383,74 +293,6 @@ export default function Navbar() {
           transform: scaleX(1);
         }
 
-        .kb-chevron { transition: transform .25s ease; }
-        .kb-chevron--open { transform: rotate(180deg); }
-
-        /* ---- dropdown ---- */
-        .kb-dropdown {
-          position: absolute;
-          top: calc(100% + 14px);
-          left: 50%;
-          transform: translate(-50%, 8px);
-          width: 460px;
-          background: var(--kb-white);
-          border-top: 2px solid var(--kb-gold);
-          box-shadow: 0 20px 48px rgba(17,17,17,.14);
-          opacity: 0;
-          visibility: hidden;
-          pointer-events: none;
-          transition: opacity .22s ease, transform .22s ease, visibility .22s;
-        }
-        .kb-dropdown--open {
-          opacity: 1;
-          visibility: visible;
-          pointer-events: auto;
-          transform: translate(-50%, 0);
-        }
-
-        .kb-dropdown-inner { padding: 10px; }
-
-        .kb-dropdown-item {
-          display: block;
-          padding: 16px 18px;
-          text-decoration: none;
-          border-radius: 2px;
-          transition: background .2s ease;
-        }
-        .kb-dropdown-item:hover { background: #FAF7F0; }
-
-        .kb-dropdown-item-top {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          color: var(--kb-black);
-        }
-
-        .kb-dropdown-item-title {
-          font-size: 14px;
-          font-weight: 600;
-          letter-spacing: .2px;
-        }
-
-        .kb-dropdown-item-top svg {
-          color: var(--kb-gold);
-          transform: translateX(-4px);
-          opacity: 0;
-          transition: transform .2s ease, opacity .2s ease;
-        }
-        .kb-dropdown-item:hover .kb-dropdown-item-top svg {
-          transform: translateX(0);
-          opacity: 1;
-        }
-
-        .kb-dropdown-item-desc {
-          display: block;
-          margin-top: 5px;
-          font-size: 12.5px;
-          color: #888;
-          line-height: 1.5;
-        }
-
         /* ---- CTA ---- */
         .kb-nav-cta { display: flex; align-items: center; gap: 20px; }
 
@@ -505,7 +347,7 @@ export default function Navbar() {
         .kb-mobile-menu ul { list-style: none; margin: 0; padding: 8px 24px; }
         .kb-mobile-menu > ul > li { border-bottom: 1px solid var(--kb-border); }
 
-        .kb-mobile-menu a, .kb-mobile-parent {
+        .kb-mobile-menu a {
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -522,21 +364,6 @@ export default function Navbar() {
           cursor: pointer;
         }
         .kb-mobile-menu a.kb-active { color: var(--kb-gold); }
-
-        .kb-mobile-submenu {
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height .3s ease;
-          padding-left: 12px;
-        }
-        .kb-mobile-submenu--open { max-height: 200px; }
-        .kb-mobile-submenu a {
-          font-size: 13px;
-          font-weight: 500;
-          text-transform: none;
-          color: #666;
-          padding: 12px 4px;
-        }
 
         .kb-mobile-cta {
           display: flex;
