@@ -15,7 +15,8 @@ import { useEffect, useRef, useState } from "react";
 const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/About" },
-  {
+  { label: "Products", href: "/products" },
+  /*{
     label: "Products",
     href: "/products",
     children: [
@@ -30,7 +31,7 @@ const NAV_LINKS = [
         desc: "Durable cabling for submersible installations.",
       },
     ],
-  },
+  },*/
   { label: "Dealer", href: "/dealer" },
   { label: "Contact", href: "/contact" },
 ];
