@@ -64,7 +64,6 @@ export default function Navbar() {
       {/* ===== Main bar ===== */}
       <div className="kb-nav-inner">
         <a href="/" className="kb-logo" onClick={() => setActivePath("/")}>
-          <span className="kb-logo-mark">K</span>
           <span className="kb-logo-text">
             KAB<span className="kb-accent">CO</span>
           </span>
