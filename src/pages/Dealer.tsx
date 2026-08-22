@@ -1,14 +1,15 @@
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CTA from "../components/CTA";
-import Abouthero from "../components/Abouthero";
-import AboutValues from "../components/AboutValues";
+import DealerHero from "../components/Dealerhero";
+import Partner from "../components/Partner";
+
 export default function Home() {
   return (
     <div>
       <Navbar />
-      <Abouthero />
-      <AboutValues />
+      <DealerHero />
+      <Partner />
        <CTA/>
       <Footer />
     </div>
