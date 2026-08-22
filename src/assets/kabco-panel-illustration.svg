@@ -1,0 +1,96 @@
+<svg viewBox="0 0 400 620" xmlns="http://www.w3.org/2000/svg" width="400" height="620">
+  <defs>
+    <linearGradient id="kbPanelGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1c1c" />
+      <stop offset="100%" stop-color="#0d0d0d" />
+    </linearGradient>
+  </defs>
+
+  <!-- panel body -->
+  <rect x="24" y="24" width="352" height="572" rx="10" fill="url(#kbPanelGrad)" stroke="#C8A24A" stroke-width="1.8" />
+  <rect x="44" y="46" width="312" height="528" rx="4" fill="none" stroke="#C8A24A" stroke-width="1" opacity="0.45" />
+
+  <!-- hinges -->
+  <rect x="8" y="150" width="26" height="36" rx="5" fill="#0d0d0d" stroke="#3a3a3a" stroke-width="1.2" />
+  <circle cx="12" cy="168" r="3.5" fill="#3a3a3a" />
+  <rect x="8" y="480" width="26" height="36" rx="5" fill="#0d0d0d" stroke="#3a3a3a" stroke-width="1.2" />
+  <circle cx="12" cy="498" r="3.5" fill="#3a3a3a" />
+
+  <!-- TESTED tag -->
+  <g transform="rotate(-40 60 90)">
+    <rect x="20" y="80" width="80" height="20" fill="#8b1f1f" />
+    <text x="60" y="94" text-anchor="middle" fill="#fff" font-family="Poppins, sans-serif" font-size="9" font-weight="700" letter-spacing="1">TESTED</text>
+  </g>
+
+  <!-- V meter -->
+  <g>
+    <rect x="72" y="90" width="150" height="130" rx="4" fill="#161616" stroke="#3a3a3a" stroke-width="1.3" />
+    <rect x="80" y="98" width="134" height="96" rx="2" fill="#0c0c0c" stroke="#2a2a2a" />
+    <path d="M 94 176 A 55 55 0 0 1 200 176" fill="none" stroke="#555" stroke-width="1.2" />
+    <text x="94" y="190" text-anchor="middle" fill="#ccc" font-family="Poppins, sans-serif" font-size="8.5">0</text>
+    <text x="120" y="114" text-anchor="middle" fill="#ccc" font-family="Poppins, sans-serif" font-size="8.5">100</text>
+    <text x="174" y="114" text-anchor="middle" fill="#ccc" font-family="Poppins, sans-serif" font-size="8.5">200</text>
+    <text x="200" y="190" text-anchor="middle" fill="#ccc" font-family="Poppins, sans-serif" font-size="8.5">300</text>
+    <line x1="147" y1="176" x2="131" y2="124" stroke="#eee" stroke-width="1.5" stroke-linecap="round" />
+    <circle cx="147" cy="176" r="3" fill="#eee" />
+    <text x="86" y="110" fill="#ddd" font-family="Poppins, sans-serif" font-size="13" font-weight="700">V</text>
+    <text x="147" y="208" text-anchor="middle" fill="#C8A24A" font-family="Cinzel, serif" font-size="9" font-weight="700" letter-spacing="1">KABCO</text>
+  </g>
+  <text x="147" y="240" text-anchor="middle" fill="#999" font-family="Poppins, sans-serif" font-size="11" letter-spacing="2">METER</text>
+
+  <!-- MACHINE ON -->
+  <text x="300" y="90" text-anchor="middle" fill="#C8A24A" font-family="Poppins, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.5">MACHINE</text>
+  <text x="300" y="101" text-anchor="middle" fill="#C8A24A" font-family="Poppins, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.5">ON</text>
+  <circle cx="300" cy="128" r="21" fill="#7a1c1c" stroke="#c94f4f" stroke-width="2" />
+  <ellipse cx="292" cy="119" rx="9" ry="5" fill="#e07a7a" opacity="0.45" />
+
+  <!-- PUSH TO VOLT -->
+  <text x="300" y="168" text-anchor="middle" fill="#C8A24A" font-family="Poppins, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.5">PUSH TO</text>
+  <text x="300" y="179" text-anchor="middle" fill="#C8A24A" font-family="Poppins, sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.5">VOLT</text>
+  <circle cx="300" cy="206" r="19" fill="#215c2c" stroke="#4c9a5a" stroke-width="2" />
+  <ellipse cx="293" cy="198" rx="8" ry="4.5" fill="#7cc98a" opacity="0.45" />
+
+  <!-- toggle switch -->
+  <rect x="270" y="238" width="60" height="30" rx="6" fill="#3a3a3a" stroke="#555" stroke-width="1.2" />
+  <rect x="282" y="246" width="34" height="14" rx="3" fill="#1a1a1a" />
+  <polygon points="286,253 300,246 300,260" fill="#888" />
+
+  <!-- A meter -->
+  <g>
+    <rect x="72" y="300" width="150" height="130" rx="4" fill="#161616" stroke="#3a3a3a" stroke-width="1.3" />
+    <rect x="80" y="308" width="134" height="96" rx="2" fill="#0c0c0c" stroke="#2a2a2a" />
+    <path d="M 94 386 A 55 55 0 0 1 200 386" fill="none" stroke="#555" stroke-width="1.2" />
+    <text x="94" y="400" text-anchor="middle" fill="#ccc" font-family="Poppins, sans-serif" font-size="8.5">0</text>
+    <text x="120" y="324" text-anchor="middle" fill="#ccc" font-family="Poppins, sans-serif" font-size="8.5">10</text>
+    <text x="174" y="324" text-anchor="middle" fill="#ccc" font-family="Poppins, sans-serif" font-size="8.5">20</text>
+    <text x="200" y="400" text-anchor="middle" fill="#ccc" font-family="Poppins, sans-serif" font-size="8.5">30</text>
+    <line x1="147" y1="386" x2="131" y2="334" stroke="#eee" stroke-width="1.5" stroke-linecap="round" />
+    <circle cx="147" cy="386" r="3" fill="#eee" />
+    <text x="86" y="320" fill="#ddd" font-family="Poppins, sans-serif" font-size="13" font-weight="700">A</text>
+    <text x="147" y="418" text-anchor="middle" fill="#C8A24A" font-family="Cinzel, serif" font-size="9" font-weight="700" letter-spacing="1">KABCO</text>
+  </g>
+  <text x="147" y="450" text-anchor="middle" fill="#999" font-family="Poppins, sans-serif" font-size="11" letter-spacing="2">METER</text>
+
+  <!-- RESET -->
+  <text x="300" y="300" text-anchor="middle" fill="#C8A24A" font-family="Poppins, sans-serif" font-size="10" font-weight="700" letter-spacing="0.5">RESET</text>
+  <rect x="291" y="312" width="18" height="18" fill="#2a2a2a" stroke="#555" stroke-width="1" transform="rotate(22.5 300 321)" />
+  <circle cx="300" cy="321" r="6" fill="#a83232" />
+
+  <!-- KABCO wordmark with proper TM superscript -->
+  <text x="60" y="560" fill="#C8A24A" font-family="Cinzel, serif" font-size="34" font-weight="700" letter-spacing="1">KABCO<tspan font-family="Poppins, sans-serif" font-size="13" dy="-16">™</tspan></text>
+
+  <!-- START -->
+  <text x="230" y="512" text-anchor="middle" fill="#C8A24A" font-family="Poppins, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">START</text>
+  <circle cx="230" cy="544" r="22" fill="#3a3a3a" stroke="#666" stroke-width="2" />
+  <circle cx="230" cy="544" r="15.5" fill="#1f7a34" stroke="#3fa055" stroke-width="1.5" />
+  <ellipse cx="223" cy="537" rx="7.5" ry="4" fill="#6fcf85" opacity="0.5" />
+
+  <!-- STOP -->
+  <text x="320" y="512" text-anchor="middle" fill="#C8A24A" font-family="Poppins, sans-serif" font-size="11" font-weight="700" letter-spacing="0.5">STOP</text>
+  <circle cx="320" cy="544" r="22" fill="#3a3a3a" stroke="#666" stroke-width="2" />
+  <circle cx="320" cy="544" r="15.5" fill="#a1272b" stroke="#c9464a" stroke-width="1.5" />
+  <ellipse cx="313" cy="537" rx="7.5" ry="4" fill="#e28a8d" opacity="0.5" />
+
+  <!-- bottom vent line -->
+  <line x1="44" y1="592" x2="356" y2="592" stroke="#2a2a2a" stroke-width="1" />
+</svg>
