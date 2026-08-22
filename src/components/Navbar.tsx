@@ -13,10 +13,10 @@ import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Dealer", href: "/dealer" },
-  { label: "Contact", href: "/contact" },
+  { label: "About", href: "/About" },
+  { label: "Products", href: "/Products" },
+  { label: "Dealer", href: "/Dealer" },
+  { label: "Contact", href: "/Contact" },
 ];
 
 export default function Navbar() {
