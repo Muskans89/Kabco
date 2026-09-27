@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Dealer from './pages/Dealer';
 
 import './index.css';
+import Products from './pages/Products';
 
 const App = () => {
   // Scroll-to-top functionality within the App component
@@ -25,6 +26,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
+         <Route path="/Products" element={<Products/>} />
         <Route path="/Dealer" element={<Dealer />} />
         <Route path="/Contact" element={<Contact />} />
     
