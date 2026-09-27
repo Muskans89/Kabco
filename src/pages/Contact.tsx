@@ -4,7 +4,7 @@ import CTA from "../components/CTA";
 import ContactForm from "../components/ContactInfo";
 import Contact from "../components/Form";
 import ContactHero from "../components/ContactHero";
-import HowCanWeHelp from "../components/HowCanWeHelp";
+//import HowCanWeHelp from "../components/HowCanWeHelp";
 
 export default function Home() {
   return (
@@ -12,7 +12,6 @@ export default function Home() {
       <Navbar />
       <ContactHero />
       <ContactForm />
-      <HowCanWeHelp />
       <Contact/>
        <CTA/>
       <Footer />
