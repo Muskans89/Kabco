@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from "react";
  * KABCO — "Our Products" / Product Showcase (Home page)
  * Place in: src/components/home/ProductShowcase.tsx
  *
+ * Client feedback applied:
+ * - Section padding reduced to tighten page flow.
+ * - Intro paragraph shortened.
+ *
  * Two premium product cards with placeholder line-art visuals — swap
  * <StarterArt /> / <CableArt /> for real product photography whenever
  * it's ready (e.g. <img src="/assets/images/starter-panel.jpg" ... />).
@@ -38,14 +42,14 @@ function useInView<T extends HTMLElement>() {
 const PRODUCTS = [
   {
     title: "Submersible Starters",
-    desc: "Control units designed for submersible pump systems, built with attention to quality, safety, and ease of use.",
-    href: "/products/starters",
+    desc: "Control units built for submersible pump systems, with a focus on quality, safety, and ease of use.",
+    href: "/products",
     art: "starter" as const,
   },
   {
     title: "Submersible Cables",
-    desc: "Electrical cables designed for submersible pump installations, manufactured with a focus on dependable connectivity and durability.",
-    href: "/products/cables",
+    desc: "Electrical cables for submersible pump installations, built for dependable connectivity and durability.",
+    href: "/products",
     art: "cable" as const,
   },
 ];
@@ -64,15 +68,10 @@ export default function ProductShowcase() {
           </h2>
           <div className="kb-products-rule" />
           <p className="kb-products-intro">
-            KABCO offers a focused range of premium electrical products
-            designed for dependable performance and everyday applications.
-            Our product lineup currently includes Submersible Starters and
-            Submersible Cables, developed with an emphasis on quality,
-            durability, and professional presentation.
+            A focused range of premium electrical products for dependable,
+            everyday pump performance.
           </p>
         </div>
-
-        <span className="kb-products-label">Product Categories</span>
 
         <div ref={gridRef} className="kb-products-grid">
           {PRODUCTS.map((product, i) => (
@@ -128,13 +127,13 @@ export default function ProductShowcase() {
         .kb-products-inner {
           max-width: 1280px;
           margin: 0 auto;
-          padding: 110px 40px;
+          padding: 80px 40px;
         }
 
         .kb-products-head {
           text-align: center;
           max-width: 680px;
-          margin: 0 auto 40px;
+          margin: 0 auto 36px;
           opacity: 0;
           transform: translateY(24px);
           transition: opacity .8s ease, transform .8s ease;
@@ -148,48 +147,37 @@ export default function ProductShowcase() {
           letter-spacing: 2.4px;
           text-transform: uppercase;
           color: var(--kb-gold);
-          margin-bottom: 16px;
+          margin-bottom: 14px;
         }
 
         .kb-products-title {
           font-family: 'Cinzel', serif;
           font-weight: 600;
-          font-size: 34px;
+          font-size: 32px;
           line-height: 1.3;
           color: var(--kb-black);
-          margin: 0 0 20px;
+          margin: 0 0 18px;
         }
 
         .kb-products-rule {
           width: 56px;
           height: 2px;
           background: var(--kb-gold);
-          margin: 0 auto 22px;
+          margin: 0 auto 18px;
         }
 
         .kb-products-intro {
-          font-size: 15.5px;
-          line-height: 1.8;
+          font-size: 15px;
+          line-height: 1.7;
           color: #777;
           font-weight: 300;
           margin: 0;
         }
 
-        .kb-products-label {
-          display: block;
-          text-align: center;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          color: #aaa;
-          margin: 0 0 34px;
-        }
-
         .kb-products-grid {
           display: grid;
           grid-template-columns: repeat(2, 1fr);
-          gap: 32px;
+          gap: 28px;
         }
 
         .kb-product-card {
@@ -226,23 +214,23 @@ export default function ProductShowcase() {
         }
 
         .kb-product-body {
-          padding: 32px 34px 36px;
+          padding: 28px 30px 32px;
         }
 
         .kb-product-body h3 {
           font-family: 'Poppins', sans-serif;
-          font-size: 19px;
+          font-size: 18px;
           font-weight: 600;
           color: var(--kb-black);
-          margin: 0 0 12px;
+          margin: 0 0 10px;
         }
 
         .kb-product-body p {
-          font-size: 14px;
-          line-height: 1.75;
+          font-size: 13.5px;
+          line-height: 1.7;
           color: #777;
           font-weight: 300;
-          margin: 0 0 20px;
+          margin: 0 0 16px;
         }
 
         .kb-product-link {
@@ -261,7 +249,7 @@ export default function ProductShowcase() {
         .kb-products-cta {
           display: flex;
           justify-content: center;
-          margin-top: 56px;
+          margin-top: 40px;
         }
 
         .kb-btn {
@@ -295,13 +283,13 @@ export default function ProductShowcase() {
 
         @media (max-width: 860px) {
           .kb-products-grid { grid-template-columns: 1fr; }
-          .kb-products-inner { padding: 90px 32px; }
+          .kb-products-inner { padding: 64px 32px; }
         }
 
         @media (max-width: 560px) {
-          .kb-products-inner { padding: 70px 22px; }
-          .kb-products-title { font-size: 26px; }
-          .kb-product-body { padding: 26px 24px 30px; }
+          .kb-products-inner { padding: 50px 22px; }
+          .kb-products-title { font-size: 24px; }
+          .kb-product-body { padding: 24px 22px 28px; }
         }
 
         @media (prefers-reduced-motion: reduce) {

@@ -4,8 +4,10 @@ import { useEffect, useRef, useState } from "react";
  * KABCO — "Why Choose KABCO" Section
  * Place in: src/components/home/WhyChooseKabco.tsx
  *
- * Icon cards (per brief: "Instead of feature cards, use icon cards").
- * Cards fade/slide up on scroll with a slight stagger.
+ * Client feedback applied:
+ * - Section padding and header spacing reduced to tighten page flow
+ *   (was 110px / 64px margin).
+ * - Card copy tightened slightly for less text density.
  *
  * Fonts (load once globally):
  * <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,14 +16,14 @@ import { useEffect, useRef, useState } from "react";
 const FEATURES = [
   {
     title: "Premium Quality",
-    desc: "Manufactured using carefully selected materials and consistent quality standards.",
+    desc: "Carefully selected materials and consistent quality standards.",
     icon: (
       <path d="M12 2 3 8l9 14 9-14-9-6Zm0 0 4 6H8l4-6ZM3 8h18M8 8l4 14M16 8l-4 14" />
     ),
   },
   {
     title: "Reliable Performance",
-    desc: "Designed to deliver dependable operation in everyday working conditions.",
+    desc: "Dependable operation in everyday working conditions.",
     icon: (
       <>
         <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
@@ -32,7 +34,7 @@ const FEATURES = [
   },
   {
     title: "Safety Focused",
-    desc: "Built with safety and reliability as important priorities.",
+    desc: "Built with safety and reliability as key priorities.",
     icon: (
       <>
         <path d="M12 3 4 6v6c0 5 3.4 8.4 8 9 4.6-.6 8-4 8-9V6l-8-3Z" />
@@ -42,7 +44,7 @@ const FEATURES = [
   },
   {
     title: "Premium Packaging",
-    desc: "Thoughtfully designed packaging that protects the product while reflecting the quality of the brand.",
+    desc: "Thoughtful packaging that protects the product and reflects the brand.",
     icon: (
       <>
         <path d="M21 8v10.5a1 1 0 0 1-.5.87l-8 4.5a1 1 0 0 1-1 0l-8-4.5A1 1 0 0 1 3 18.5V8" />
@@ -53,7 +55,7 @@ const FEATURES = [
   },
   {
     title: "Consistent Quality",
-    desc: "Every product is developed with attention to detail to maintain dependable performance and customer confidence.",
+    desc: "Every product built with attention to detail, batch after batch.",
     icon: (
       <>
         <circle cx="12" cy="12" r="9" />
@@ -64,7 +66,7 @@ const FEATURES = [
   },
   {
     title: "Dealer Friendly",
-    desc: "Professional branding, attractive packaging, and dependable product presentation.",
+    desc: "Professional branding and dependable product presentation.",
     icon: (
       <>
         <path d="M8.5 14.5 4 10l3-3 3.5 3.5" />
@@ -113,10 +115,6 @@ export default function WhyChooseKabco() {
           <span className="kb-why-eyebrow">What Sets Us Apart</span>
           <h2 className="kb-why-title">Why Choose KABCO</h2>
           <div className="kb-why-rule" />
-          <p className="kb-why-subtitle">
-            Discover what makes KABCO a trusted choice for submersible
-            starters and cables.
-          </p>
         </div>
 
         <div ref={gridRef} className="kb-why-grid">
@@ -155,13 +153,13 @@ export default function WhyChooseKabco() {
         .kb-why-inner {
           max-width: 1280px;
           margin: 0 auto;
-          padding: 110px 40px;
+          padding: 80px 40px;
         }
 
         .kb-why-head {
           text-align: center;
           max-width: 640px;
-          margin: 0 auto 64px;
+          margin: 0 auto 44px;
           opacity: 0;
           transform: translateY(24px);
           transition: opacity .8s ease, transform .8s ease;
@@ -175,30 +173,22 @@ export default function WhyChooseKabco() {
           letter-spacing: 2.4px;
           text-transform: uppercase;
           color: var(--kb-gold);
-          margin-bottom: 16px;
+          margin-bottom: 14px;
         }
 
         .kb-why-title {
           font-family: 'Cinzel', serif;
           font-weight: 600;
-          font-size: 36px;
+          font-size: 34px;
           color: var(--kb-black);
-          margin: 0 0 20px;
+          margin: 0 0 18px;
         }
 
         .kb-why-rule {
           width: 56px;
           height: 2px;
           background: var(--kb-gold);
-          margin: 0 auto 22px;
-        }
-
-        .kb-why-subtitle {
-          font-size: 15.5px;
-          line-height: 1.7;
-          color: #777;
-          font-weight: 300;
-          margin: 0;
+          margin: 0 auto;
         }
 
         .kb-why-grid {
@@ -211,7 +201,7 @@ export default function WhyChooseKabco() {
 
         .kb-why-card {
           background: var(--kb-white);
-          padding: 46px 38px;
+          padding: 38px 32px;
           opacity: 0;
           transform: translateY(26px);
           transition: opacity .6s ease, transform .6s ease, background .25s ease;
@@ -223,15 +213,15 @@ export default function WhyChooseKabco() {
         }
 
         .kb-why-icon {
-          width: 58px;
-          height: 58px;
+          width: 54px;
+          height: 54px;
           border-radius: 50%;
           border: 1.5px solid var(--kb-gold);
           display: flex;
           align-items: center;
           justify-content: center;
           color: var(--kb-gold);
-          margin-bottom: 24px;
+          margin-bottom: 20px;
           transition: background .25s ease, color .25s ease, transform .25s ease;
         }
 
@@ -243,16 +233,16 @@ export default function WhyChooseKabco() {
 
         .kb-why-card h3 {
           font-family: 'Poppins', sans-serif;
-          font-size: 17px;
+          font-size: 16.5px;
           font-weight: 600;
           letter-spacing: .2px;
           color: var(--kb-black);
-          margin: 0 0 12px;
+          margin: 0 0 10px;
         }
 
         .kb-why-card p {
-          font-size: 14px;
-          line-height: 1.75;
+          font-size: 13.5px;
+          line-height: 1.65;
           color: #777;
           font-weight: 300;
           margin: 0;
@@ -260,14 +250,14 @@ export default function WhyChooseKabco() {
 
         @media (max-width: 900px) {
           .kb-why-grid { grid-template-columns: repeat(2, 1fr); }
-          .kb-why-inner { padding: 90px 32px; }
+          .kb-why-inner { padding: 64px 32px; }
         }
 
         @media (max-width: 560px) {
           .kb-why-grid { grid-template-columns: 1fr; }
-          .kb-why-inner { padding: 70px 22px; }
-          .kb-why-title { font-size: 28px; }
-          .kb-why-card { padding: 38px 28px; }
+          .kb-why-inner { padding: 50px 22px; }
+          .kb-why-title { font-size: 26px; }
+          .kb-why-card { padding: 32px 26px; }
         }
 
         @media (prefers-reduced-motion: reduce) {

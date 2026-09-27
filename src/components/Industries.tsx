@@ -4,6 +4,10 @@ import { useEffect, useRef, useState } from "react";
  * KABCO — "Industries We Serve" Section
  * Place in: src/components/home/Industries.tsx
  *
+ * Client feedback applied:
+ * - Section padding and header spacing reduced to tighten page flow.
+ * - Subtitle shortened.
+ *
  * Dark section (deliberate rhythm break from the light sections above/
  * below) with elegant icon cards standing in for the "large image, dark
  * overlay, white title" treatment from the brief — since real industry
@@ -110,10 +114,6 @@ export default function Industries() {
           <span className="kb-industries-eyebrow">Industries We Serve</span>
           <h2 className="kb-industries-title">Supporting Diverse Applications</h2>
           <div className="kb-industries-rule" />
-          <p className="kb-industries-sub">
-            KABCO products are designed to meet the needs of a wide range of
-            sectors where dependable electrical solutions are essential.
-          </p>
         </div>
 
         <div ref={gridRef} className="kb-industries-cards">
@@ -175,13 +175,13 @@ export default function Industries() {
           z-index: 1;
           max-width: 1280px;
           margin: 0 auto;
-          padding: 110px 40px;
+          padding: 80px 40px;
         }
 
         .kb-industries-head {
           text-align: center;
           max-width: 640px;
-          margin: 0 auto 64px;
+          margin: 0 auto 44px;
           opacity: 0;
           transform: translateY(24px);
           transition: opacity .8s ease, transform .8s ease;
@@ -195,48 +195,40 @@ export default function Industries() {
           letter-spacing: 2.4px;
           text-transform: uppercase;
           color: var(--kb-gold);
-          margin-bottom: 16px;
+          margin-bottom: 14px;
         }
 
         .kb-industries-title {
           font-family: 'Cinzel', serif;
           font-weight: 600;
-          font-size: 36px;
+          font-size: 34px;
           color: var(--kb-white);
-          margin: 0 0 20px;
+          margin: 0 0 18px;
         }
 
         .kb-industries-rule {
           width: 56px;
           height: 2px;
           background: var(--kb-gold);
-          margin: 0 auto 22px;
-        }
-
-        .kb-industries-sub {
-          font-size: 15.5px;
-          line-height: 1.75;
-          color: #999;
-          font-weight: 300;
-          margin: 0;
+          margin: 0 auto;
         }
 
         .kb-industries-cards {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 22px;
+          gap: 20px;
         }
 
         .kb-industry-card {
           background: linear-gradient(160deg, #1a1a1a, #131313);
           border: 1px solid #262626;
           border-radius: 3px;
-          padding: 44px 28px;
+          padding: 36px 24px;
           display: flex;
           flex-direction: column;
           align-items: center;
           text-align: center;
-          gap: 20px;
+          gap: 16px;
           opacity: 0;
           transform: translateY(28px);
           transition: opacity .6s ease, transform .6s ease, border-color .3s ease, background .3s ease;
@@ -250,8 +242,8 @@ export default function Industries() {
         }
 
         .kb-industry-icon {
-          width: 64px;
-          height: 64px;
+          width: 58px;
+          height: 58px;
           border-radius: 50%;
           border: 1.5px solid rgba(200,162,74,.4);
           display: flex;
@@ -267,7 +259,7 @@ export default function Industries() {
         }
 
         .kb-industry-label {
-          font-size: 15px;
+          font-size: 14.5px;
           font-weight: 500;
           letter-spacing: .4px;
           color: var(--kb-white);
@@ -284,7 +276,7 @@ export default function Industries() {
         .kb-industries-cta {
           display: flex;
           justify-content: center;
-          margin-top: 60px;
+          margin-top: 44px;
         }
 
         .kb-btn {
@@ -318,14 +310,14 @@ export default function Industries() {
 
         @media (max-width: 860px) {
           .kb-industries-cards { grid-template-columns: repeat(2, 1fr); }
-          .kb-industries-inner { padding: 90px 32px; }
+          .kb-industries-inner { padding: 64px 32px; }
         }
 
         @media (max-width: 560px) {
           .kb-industries-cards { grid-template-columns: 1fr; }
-          .kb-industries-inner { padding: 70px 22px; }
-          .kb-industries-title { font-size: 28px; }
-          .kb-industry-card { padding: 36px 24px; }
+          .kb-industries-inner { padding: 50px 22px; }
+          .kb-industries-title { font-size: 26px; }
+          .kb-industry-card { padding: 30px 22px; }
         }
 
         @media (prefers-reduced-motion: reduce) {

@@ -2,10 +2,16 @@
  * KABCO — "We're Here to Help" CTA / Intro Section
  * Place in: src/components/common/GetInTouchCta.tsx
  *
+ * Client feedback applied:
+ * - Removed the "Become a Dealer" button — this section is meant as a
+ *   general "get in touch" CTA (product info, dealership, technical
+ *   help), so having a dedicated dealer CTA here duplicated the
+ *   dealer-focused CTAs already elsewhere on the site (utility bar,
+ *   dealer page, etc.) and diluted the single "Contact Us" action.
+ * - Copy tightened, padding reduced to tighten page flow.
+ *
  * Standalone, reusable — works well as the Contact page hero intro, or
- * as a CTA banner on other pages. No title was provided with this copy,
- * so a fitting one ("We're Here to Help") has been added — swap the
- * `title` default or pass your own via props.
+ * as a CTA banner on other pages.
  *
  * Fonts (load once globally):
  * <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -26,9 +32,8 @@ export default function GetInTouchCta({ title = "We're Here to Help" }: Props) {
         <div className="kb-help-rule" />
 
         <p className="kb-help-sub">
-          Whether you're looking for product information, dealership
-          opportunities, or technical assistance, our team is here to help.
-          Get in touch with us and we'll be happy to assist you.
+          Product questions, technical help, or anything else — our team
+          is ready to assist.
         </p>
 
         <div className="kb-help-actions">
@@ -37,9 +42,6 @@ export default function GetInTouchCta({ title = "We're Here to Help" }: Props) {
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2.2">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg>
-          </a>
-          <a href="/dealer" className="kb-btn kb-btn-outline-dark">
-            Become a Dealer
           </a>
         </div>
       </div>
@@ -58,9 +60,9 @@ export default function GetInTouchCta({ title = "We're Here to Help" }: Props) {
         }
 
         .kb-help-inner {
-          max-width: 700px;
+          max-width: 640px;
           margin: 0 auto;
-          padding: 110px 40px;
+          padding: 70px 40px;
           text-align: center;
         }
 
@@ -71,38 +73,36 @@ export default function GetInTouchCta({ title = "We're Here to Help" }: Props) {
           letter-spacing: 2.4px;
           text-transform: uppercase;
           color: var(--kb-gold);
-          margin-bottom: 18px;
+          margin-bottom: 16px;
         }
 
         .kb-help-title {
           font-family: 'Cinzel', serif;
           font-weight: 600;
-          font-size: 36px;
+          font-size: 32px;
           line-height: 1.3;
           color: var(--kb-black);
-          margin: 0 0 22px;
+          margin: 0 0 18px;
         }
 
         .kb-help-rule {
           width: 56px;
           height: 2px;
           background: var(--kb-gold);
-          margin: 0 auto 26px;
+          margin: 0 auto 22px;
         }
 
         .kb-help-sub {
-          font-size: 16px;
-          line-height: 1.8;
+          font-size: 15px;
+          line-height: 1.7;
           color: #777;
           font-weight: 300;
-          margin: 0 0 42px;
+          margin: 0 0 30px;
         }
 
         .kb-help-actions {
           display: flex;
           justify-content: center;
-          flex-wrap: wrap;
-          gap: 18px;
         }
 
         .kb-btn {
@@ -117,7 +117,7 @@ export default function GetInTouchCta({ title = "We're Here to Help" }: Props) {
           border-radius: 2px;
           cursor: pointer;
           text-decoration: none;
-          transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+          transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
         }
 
         .kb-btn-gold {
@@ -134,23 +134,10 @@ export default function GetInTouchCta({ title = "We're Here to Help" }: Props) {
         .kb-btn-gold svg { transition: transform .25s ease; }
         .kb-btn-gold:hover svg { transform: translateX(3px); }
 
-        .kb-btn-outline-dark {
-          background: transparent;
-          color: var(--kb-black);
-          border: 1.5px solid var(--kb-black);
-        }
-        .kb-btn-outline-dark:hover {
-          background: var(--kb-black);
-          color: var(--kb-white);
-          transform: translateY(-2px);
-          box-shadow: 0 10px 22px rgba(17,17,17,.18);
-        }
-
         @media (max-width: 560px) {
-          .kb-help-inner { padding: 80px 24px; }
-          .kb-help-title { font-size: 27px; }
-          .kb-help-actions { flex-direction: column; align-items: stretch; }
-          .kb-btn { justify-content: center; }
+          .kb-help-inner { padding: 56px 24px; }
+          .kb-help-title { font-size: 25px; }
+          .kb-btn { width: 100%; justify-content: center; }
         }
       `}</style>
     </section>

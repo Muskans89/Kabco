@@ -12,7 +12,6 @@ const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
-  { label: "Dealer", href: "/dealer" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -22,9 +21,9 @@ const PRODUCT_LINKS = [
 ];
 
 const CONTACT_INFO = [
-  { label: "Phone", value: "+91 00000 00000" },
+  { label: "Phone", value: "+91 9892532290" },
   { label: "Email", value: "info@kabco.in" },
-  { label: "Address", value: "Industrial Area, City, State" },
+  { label: "Address", value: "Mumbai, Maharashtra" },
 ];
 
 export default function Footer() {
@@ -35,7 +34,7 @@ export default function Footer() {
       <div className="kb-footer-inner">
         <div className="kb-footer-col kb-footer-brand">
           <a href="/" className="kb-logo">
-            <span className="kb-logo-mark">K</span>
+           
             KAB<span className="kb-accent">CO</span>
           </a>
           <p className="kb-footer-tagline">
@@ -127,7 +126,7 @@ export default function Footer() {
         .kb-footer .kb-logo {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 0px;
           font-family: 'Cinzel', serif;
           font-size: 26px;
           font-weight: 700;

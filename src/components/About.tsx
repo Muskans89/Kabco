@@ -4,8 +4,9 @@ import { useEffect, useRef, useState } from "react";
  * KABCO — About Preview (Home page)
  * Place in: src/components/home/AboutPreview.tsx
  *
- * A short brand intro that teases the full About page — not the complete
- * story. Text-only, centered layout — no image/visual.
+ * Client feedback applied:
+ * - Section padding reduced to tighten page flow (was 110px/70px).
+ * - Copy condensed from two paragraphs into one tighter paragraph.
  *
  * Fonts (load once globally):
  * <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -50,16 +51,10 @@ export default function AboutPreview() {
           <div className="kb-about-rule" />
 
           <p>
-            KABCO is an Indian electrical brand focused on submersible
-            starters and cables. We are committed to delivering quality
-            products through careful material selection, consistent
-            manufacturing standards, and attention to detail.
-          </p>
-
-          <p>
-            Whether you're an electrician, dealer, contractor, distributor,
-            or end user, KABCO aims to provide products you can choose with
-            confidence.
+            KABCO is an Indian electrical brand delivering quality
+            submersible starters and cables — built with careful material
+            selection and consistent manufacturing standards, for
+            electricians, dealers, and end users alike.
           </p>
 
           <a href="/about" className="kb-btn kb-btn-outline-dark">
@@ -88,7 +83,7 @@ export default function AboutPreview() {
         .kb-about-inner {
           max-width: 780px;
           margin: 0 auto;
-          padding: 110px 40px;
+          padding: 80px 40px;
           text-align: center;
         }
 
@@ -109,31 +104,31 @@ export default function AboutPreview() {
           letter-spacing: 2.4px;
           text-transform: uppercase;
           color: var(--kb-gold);
-          margin-bottom: 18px;
+          margin-bottom: 16px;
         }
 
         .kb-about-title {
           font-family: 'Cinzel', serif;
           font-weight: 600;
-          font-size: clamp(26px, 4vw, 38px);
+          font-size: clamp(26px, 4vw, 36px);
           line-height: 1.3;
           color: var(--kb-black);
-          margin: 0 0 26px;
+          margin: 0 0 22px;
         }
 
         .kb-about-rule {
-          width: 64px;
+          width: 56px;
           height: 2px;
           background: var(--kb-gold);
-          margin: 0 auto 30px;
+          margin: 0 auto 24px;
         }
 
         .kb-about-content p {
           font-size: 15.5px;
-          line-height: 1.85;
+          line-height: 1.8;
           color: var(--kb-text);
           font-weight: 300;
-          margin: 0 0 20px;
+          margin: 0 0 18px;
         }
 
         .kb-btn {
@@ -150,7 +145,7 @@ export default function AboutPreview() {
           cursor: pointer;
           text-decoration: none;
           transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
-          margin-top: 12px;
+          margin-top: 8px;
         }
 
         .kb-btn-outline-dark {
@@ -168,7 +163,7 @@ export default function AboutPreview() {
         .kb-btn-outline-dark:hover svg { transform: translateX(3px); }
 
         @media (max-width: 560px) {
-          .kb-about-inner { padding: 70px 22px; }
+          .kb-about-inner { padding: 56px 22px; }
           .kb-about-content p { font-size: 14.5px; line-height: 1.75; }
           .kb-btn { width: 100%; }
         }
