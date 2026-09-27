@@ -1,16 +1,8 @@
-import { useRef, useState } from "react";
+
 import printAdImage from "../assets/IMG_3467.jpg";
 //import videoAdSrc from "../assets/WhatsApp Video 2026-09-27 at 20.35.25.mp4";
 
 export default function PromotionalAd() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
-
-  const toggleSound = () => {
-    if (!videoRef.current) return;
-    videoRef.current.muted = !videoRef.current.muted;
-    setMuted(videoRef.current.muted);
-  };
 
   return (
     <section className="kb-ad">
